@@ -1,4 +1,4 @@
-const Factorial = require('../app/factorial');
+const Factorial = require('../../app/example/factorial');
 
 describe('Factorial', () => {
   let factorial;

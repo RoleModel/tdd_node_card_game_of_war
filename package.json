@@ -1,0 +1,24 @@
+{
+  "name": "tdd_node_card_game_of_war",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "JASMINE_CONFIG_PATH=jasmine.json jasmine",
+    "test_single": "JASMINE_CONFIG_PATH=jasmine.json jasmine",
+    "test_debug": "JASMINE_CONFIG_PATH=jasmine.json node debug ./node_modules/jasmine/bin/jasmine.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RoleModel/tdd_node_card_game_of_war.git"
+  },
+  "author": "RoleModel Software",
+  "license": "none",
+  "bugs": {
+    "url": "https://github.com/RoleModel/tdd_node_card_game_of_war/issues"
+  },
+  "homepage": "https://github.com/RoleModel/tdd_node_card_game_of_war#readme",
+  "devDependencies": {
+    "jasmine": "3.1.0"
+  }
+}

@@ -1,7 +1,7 @@
 {
   "name": "tdd_node_card_game_of_war",
   "version": "1.0.0",
-  "description": "",
+  "description": "Node implementation of the card game of war",
   "main": "index.js",
   "scripts": {
     "test": "JASMINE_CONFIG_PATH=jasmine.json jasmine",
@@ -13,7 +13,7 @@
     "url": "git+https://github.com/RoleModel/tdd_node_card_game_of_war.git"
   },
   "author": "RoleModel Software",
-  "license": "none",
+  "license": "UNLICENSED",
   "bugs": {
     "url": "https://github.com/RoleModel/tdd_node_card_game_of_war/issues"
   },

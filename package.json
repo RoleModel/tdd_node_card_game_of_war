@@ -4,6 +4,7 @@
   "description": "Node implementation of the card game of war",
   "main": "index.js",
   "scripts": {
+    "start": "node app/warRunner.js",
     "test": "JASMINE_CONFIG_PATH=jasmine.json jasmine",
     "test_single": "JASMINE_CONFIG_PATH=jasmine.json jasmine",
     "test_debug": "JASMINE_CONFIG_PATH=jasmine.json node debug ./node_modules/jasmine/bin/jasmine.js"

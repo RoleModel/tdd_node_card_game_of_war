@@ -23,7 +23,7 @@ AND
 
 The manual system test
 ```
-node warRunner.js
+npm start
 ```
 produces something like:
 ```

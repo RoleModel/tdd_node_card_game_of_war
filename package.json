@@ -7,7 +7,7 @@
     "start": "node app/warRunner.js",
     "test": "JASMINE_CONFIG_PATH=jasmine.json jasmine",
     "test_single": "JASMINE_CONFIG_PATH=jasmine.json jasmine",
-    "test_debug": "JASMINE_CONFIG_PATH=jasmine.json node debug ./node_modules/jasmine/bin/jasmine.js"
+    "test_debug": "JASMINE_CONFIG_PATH=jasmine.json node inspect ./node_modules/jasmine/bin/jasmine.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/RoleModel/tdd_node_card_game_of_war#readme",
   "devDependencies": {
-    "jasmine": "3.1.0"
+    "jasmine": "3.4.0"
   }
 }

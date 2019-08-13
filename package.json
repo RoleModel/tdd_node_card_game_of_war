@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node app/warRunner.js",
+    "start_server": "node app/warSocketRunner.js",
+    "start_client": "node app/warSocketClient.js",
     "test": "JASMINE_CONFIG_PATH=jasmine.json jasmine",
     "test_single": "JASMINE_CONFIG_PATH=jasmine.json jasmine",
     "test_debug": "JASMINE_CONFIG_PATH=jasmine.json node inspect ./node_modules/jasmine/bin/jasmine.js"

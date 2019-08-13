@@ -12,7 +12,11 @@ class WarSocketServer {
         client.write('Welcome. Waiting for another player to join.\r\n');
       } else {
         const clients = this._pendingClients.splice(0, 2)
-        this._games.push(clients)
+        const warGame = {
+          clients,
+          pendingTurns: {}
+        }
+        this._games.push(warGame)
         client.write('Welcome. You are about to go to war.\r\n')
 
         clients.forEach(client => client.write('You have 26 cards left'))
@@ -21,14 +25,32 @@ class WarSocketServer {
       client.on('error', error => console.log(error))
       client.on('end', () => {
         console.log('client disconnected')
-      });
+      })
 
       client.on('data', data => {
-        console.log(data.toString())
-      });
-      client.pipe(client)
+        const game = this._games.find(({clients}) => clients.indexOf(client) >= 0);
+        if (!game) {
+          client.write('Waiting for another player to join')
+          return
+        }
 
+        const index = game.clients.indexOf(client)
+        this.broadcast(game.clients, `Player ${index +1} ready!\r\n`)
+
+        game.pendingTurns[index] = true
+        if (Object.values(game.pendingTurns).length === 2) {
+          this.broadcast(game.clients, 'Played round!\r\n')
+          game.pendingTurns = {}
+        }
+      })
     });
+  }
+
+  broadcast(clients, message) {
+    clients.forEach(function (client) {
+      client.write(message)
+    })
+    process.stdout.write(message)
   }
 
   get games() {

@@ -1,19 +1,24 @@
 var net = require('net')
 
-var client = new net.Socket();
+var socket = new net.Socket();
 
-client.connect(1337, '127.0.0.1', function () {
+socket.connect(1337, '127.0.0.1', () => {
   console.log('Connected');
 });
 
-client.on('data', function (data) {
+socket.on('data', data => {
   console.log(data.toString());
-  process.stdin.resume();
-  process.stdin.once('data', function (input) {
-    client.write(input);
-  });
 });
 
-client.on('close', function () {
+socket.on('close', () => {
   console.log('Connection closed')
+});
+
+process.stdin.on('data', input => {
+  if (input === 'exit\n') {
+    console.log('Program exiting.');
+    process.exit();
+  } else {
+    socket.write(input);
+  }
 });

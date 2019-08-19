@@ -2,7 +2,7 @@ var net = require('net')
 
 var socket = new net.Socket();
 
-socket.connect(1337, '127.0.0.1', () => {
+socket.connect(1337, '0.0.0.0', () => {
   console.log('Connected');
 });
 
